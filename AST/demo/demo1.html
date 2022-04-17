@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>试输出斐波那契数列的前10项，即1、1、2、3、5、8、13、21、34、55。然后请思考，代码是否有大量重复的计算？应该如何解决重复计算的问题！</h1>
+    <script>
+        window.onload = function () {
+            // 缓存对象
+            let cache = {}
+
+            // 创建一个函数，功能试返回下标为n的这项的数字
+            function fib(n) {
+                console.count('计数')
+                // 判断缓存对象中有没有这个值，如果有，直接用
+                if(cache.hasOwnProperty(n)) {
+                    return cache[n];
+                }
+                // 缓存对象没有这个值
+                let result = n === 0 || n === 1 ? 1 : fib(n -1) + fib(n - 2)
+
+                // 写入缓存
+                cache[n] = result;
+
+                // 看下标n是不是0或者1，如果是就返回常数1，如果不是就递归
+                return result;
+            }
+
+            for (let i = 0; i <= 9; i++) {
+                console.log(fib(i))
+            }
+
+
+            // 数组方式
+            // let arr = [1, 1]
+            // while(arr.length <= 10) {
+            //     arr.push(arr[arr.length - 1] + arr[arr.length - 2]);
+            // }
+            // console.log('arr:', arr)
+
+        }
+    </script>
+</body>
+</html>

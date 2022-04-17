@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>试将高维数组[1, 2, [3, [4, 5], 6], 7, [8], 9]变为如下图中所示的对象：</h1>
+    <img src="../../assets/images/demo2.png" alt="">
+    <script>
+        window.onload = function () {
+            // 测试数组
+            let arr = [1, 2, [3, [4, 5], 6], 7, [8], 9]
+
+            // 转换函数1
+            // function convert1(arr) {
+            //     // 结果数组
+            //     let result = [];
+            //     for (let i = 0; i < arr.length; i++) {
+            //         if(typeof arr[i] === 'number') {
+            //             result.push({
+            //                 value: arr[i]
+            //             })
+            //         } else if(Array.isArray(arr[i])) {
+            //             result.push({
+            //                 children: convert1(arr[i])
+            //             })
+            //         }
+            //     }
+            //
+            //     return result;
+            // }
+            //
+            // console.log(JSON.stringify({ children: convert1(arr)}));
+
+            // 转换函数2，参数不是arr数组，而是item，item可能是数组也可能是数字
+            function convert2(item) {
+                if (typeof item === 'number') {
+                    // 如果传进来的参数是数字
+                    return {
+                        value: item
+                    }
+                } else if (Array.isArray(item)) {
+                    // 如果传进来的参数是数组
+                    return {
+                        children: item.map(_item => convert2(_item))
+                    }
+                }
+            }
+
+            console.log(JSON.stringify(convert2(arr)));
+        }
+    </script>
+</body>
+</html>
