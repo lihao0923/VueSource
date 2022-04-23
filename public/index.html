@@ -5,6 +5,24 @@
     <title>Title</title>
 </head>
 <body>
-
+    <div id="app">
+        <h2 class="title">hello world!</h2>
+        <input type="text" v-model="abc">
+        <ul>
+            <li>apple</li>
+            <li>banana</li>
+            <li>tomato</li>
+        </ul>
+    </div>
+    <script>
+        window.onload = function () {
+            new Vue({
+                el: '#app',
+                data: {
+                    a: 10
+                }
+            })
+        }
+    </script>
 </body>
 </html>
