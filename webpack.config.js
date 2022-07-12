@@ -1,12 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// console.log(process);
+console.log('0000000000000:', process);
 
 module.exports = {
     mode: 'development',
     // 入口
     // entry: './AST/index.js',
-    entry: './directive_lifecycle/index.js',
+    entry: './src/mustache/index.js',
 
     // 出口
     output: {
