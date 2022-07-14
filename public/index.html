@@ -8,5 +8,15 @@
     <div id="app">
         <h1 class="title">hello world!</h1>
     </div>
+    <script>
+        window.onload = function () {
+            let templateStr = '我买了一台{{thing}}, 好{{mood}}啊！';
+            let data = {
+                thing: '汽车',
+                mood: '开心'
+            }
+            vueTemplateEngine.render(templateStr, data);
+        }
+    </script>
 </body>
 </html>

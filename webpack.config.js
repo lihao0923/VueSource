@@ -1,6 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-console.log('0000000000000:', process);
 
 module.exports = {
     mode: 'development',
@@ -27,7 +26,7 @@ module.exports = {
     devServer: {
         // 端口号
         port: 8080,
-        compress: true,
+        compress: false,
         open: false
     }
 };
