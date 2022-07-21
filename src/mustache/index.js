@@ -1,18 +1,13 @@
-import Scanner from './Scanner';
+import parseTemplateToTokens from './parseTemplateToTokens';
+import renderTemplate from './renderTemplate';
+import lookup from './lookup';
 
 window.vueTemplateEngine = {
     render(templateStr, data) {
-        let scanner = new Scanner(templateStr);
-        let words = '';
+        // 调用parseTemplateToTokens函数，让模版字符串能够变为tokens数组
+        let tokens = parseTemplateToTokens(templateStr);
+        let domStr = renderTemplate(tokens, data)
 
-        while(!scanner.eos()) {
-            words = scanner.scanUtil('{{');
-            console.log(words);
-            scanner.scan('{{');
-
-            words = scanner.scanUtil('}}');
-            console.log(words);
-            scanner.scan('}}');
-        }
+        return domStr;
     }
 }
