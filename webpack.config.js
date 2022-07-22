@@ -5,7 +5,7 @@ module.exports = {
     mode: 'development',
     // 入口
     // entry: './AST/index.js',
-    entry: './src/mustache/index.js',
+    entry: './src/vm_diff/index.js',
 
     // 出口
     output: {

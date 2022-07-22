@@ -17,39 +17,37 @@
             //     mood: '开心'
             // };
 
-            let templateStr = `
-                <div>
-                    <ol>
-                        {{#students}}
-                        <li>
-                            学生{{name}}的爱好是：
-                            <ol>
-                                <li>{{#hobbies}}</li>
-                                <li>{{.}}</li>
-                                <li>{{/hobbies}}</li>
-                            </ol>
-                        </li>
-                        {{/students}}
-                    </ol>
-                </div>
-            `;
-            let data = {
-                students: [
-                    {name: 'Jack', hobbies: ['basketball', 'ride', 'working']},
-                    {name: 'Peter', hobbies: ['talking', 'movies']},
-                    {name: 'Alice', hobbies: ['walking', 'dance', 'movies']}
-                ]
-            };
+            // let templateStr = `
+            //     <div>
+            //         <ol>
+            //             {{#students}}
+            //             <li>
+            //                 学生{{name}}的爱好是：
+            //                 <ol>
+            //                     <li>{{#hobbies}}</li>
+            //                     <li>{{.}}</li>
+            //                     <li>{{/hobbies}}</li>
+            //                 </ol>
+            //             </li>
+            //             {{/students}}
+            //         </ol>
+            //     </div>
+            // `;
+            // let data = {
+            //     students: [
+            //         {name: 'Jack', hobbies: ['basketball', 'ride', 'working']},
+            //         {name: 'Peter', hobbies: ['talking', 'movies']},
+            //         {name: 'Alice', hobbies: ['walking', 'dance', 'movies']}
+            //     ]
+            // };
 
             // let templateStr = '我爱{{somebody}}, {{somebody}}也爱我！我好{{mood}}啊！我有{{money.rmb}}元钱！';
             // let data = { somebody: '叶倩蕾', mood: '幸福', money: { rmb: 500} };
 
 
-            let domStr = vueTemplateEngine.render(templateStr, data);
-
-            console.log(domStr);
-            let container = document.getElementById('container');
-            container.innerHTML = domStr;
+            // let domStr = vueTemplateEngine.render(templateStr, data);
+            // let container = document.getElementById('container');
+            // container.innerHTML = domStr;
         }
     </script>
 </body>
