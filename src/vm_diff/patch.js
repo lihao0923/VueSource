@@ -4,6 +4,7 @@
 
 import vnode from './vnode';
 import createElement from './createElement';
+import patchVnode from './patchVnode';
 
 export default function (oldVnode, newVnode) {
     if(oldVnode.sel === '' || oldVnode.sel === undefined) {
@@ -11,7 +12,8 @@ export default function (oldVnode, newVnode) {
     }
 
     if(oldVnode.key === newVnode.key && oldVnode.sel === newVnode.sel) {
-
+        // 是同一个节点
+        patchVnode(oldVnode, newVnode);
     } else {
         let newVnodeElm = createElement(newVnode);
 

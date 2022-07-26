@@ -2,13 +2,7 @@
 import h from './h';
 import patch from './patch';
 
-// let myVnode1 = h('div', {}, [
-//     h('p', {}, 'hello'),
-//     h('p', {}, 'world'),
-//     h('p', {}, h('span', {}, 'shit!!!'))
-// ]);
-// console.log(myVnode1);
-// let myVnode2 = h('ul', {}, [
+// let myVnode1 = h('ul', {}, [
 //     h('li', {},'Apple'),
 //     h('li', {},'Banana'),
 //     h('li', {},'Watermelon'),
@@ -20,33 +14,38 @@ import patch from './patch';
 //     ]),
 //     h('li', {},'Kiwi'),
 // ]);
-//
-// console.log(myVnode2);
-
-let myVnode1 = h('ul', {}, [
-    h('li', {},'Apple'),
-    h('li', {},'Banana'),
-    h('li', {},'Watermelon'),
-    h('li', {},[
-        h('div', {},[
-            h('p', {},'milk'),
-            h('p', {},'cola')
-        ])
-    ]),
-    h('li', {},'Kiwi'),
-]);
-
-let myVnode2 = h('section', {}, [
-    h('h1', {},'苹果'),
-    h('h1', {},'香蕉'),
-    h('h1', {},'西瓜'),
-]);
-
-
 const container = document.getElementById('container');
+const btn = document.getElementById('btn');
+
+// let myVnode1 = h('section', {}, [
+//     h('p', {},'Apple'),
+//     h('p', {},'Banana'),
+//     h('p', {},'Watermelon')
+// ]);
+
+// let myVnode2 = h('section', {}, [
+//     h('p', {},'Apple'),
+//     h('p', {},'Banana'),
+//     h('p', {},'Watermelon'),
+//     h('p', {},'pear'),
+// ]);
+let myVnode1 = h('ul', {}, [
+    h('li', {key: 'A'},'A'),
+    h('li', {key: 'B'},'B'),
+    h('li', {key: 'C'},'C'),
+]);
+let myVnode2 = h('ul', {}, [
+    h('li', {key: 'C'},'C'),
+    h('li', {key: 'A'},'A'),
+    h('li', {key: 'B'},'B'),
+    h('li', {key: 'M'},'M'),
+    h('li', {key: 'N'},'N'),
+    h('li', {key: 'P'},'P'),
+    h('li', {key: 'Q'},'Q'),
+]);
+
 patch(container, myVnode1);
 
-const btn = document.getElementById('btn');
 btn.onclick = function() {
     patch(myVnode1, myVnode2);
 };
