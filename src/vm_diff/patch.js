@@ -24,7 +24,7 @@ export default function (oldVnode, newVnode) {
         oldVnode.elm.parentNode.removeChild(oldVnode.elm);
     }
 
-    console.log(oldVnode);
+    // console.log(oldVnode);
 }
 
 
