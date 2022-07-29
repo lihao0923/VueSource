@@ -19,6 +19,13 @@ export default function defineReactive(data, key,val) {
 
         // getter
         get() {
+
+            if(Dep.target) {
+                dep.depend();
+                if(childOb) {
+                    childOb.dep.depend();
+                }
+            }
             return val;
         },
         // setter
