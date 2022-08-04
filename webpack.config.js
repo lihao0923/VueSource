@@ -4,8 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     mode: 'development',
     // 入口
-    // entry: './AST/index.js',
-    entry: './src/reactive/index.js',
+    entry: './src/ast/index.js',
 
     // 出口
     output: {
