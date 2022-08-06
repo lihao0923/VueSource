@@ -1,15 +1,17 @@
-console.log('ast!');
-
-// 试编写"智能重复"smartRepeat函数，实现：
-// 将3[abc]变为abcabcabc
-// 将3[2[a]2[b]]变为aabbaabbaabb
-// 将2[1[a]3[b]2[3[c]4[d]]]变为abbbcccddddcccddddabbbcccddddcccdddd
-
-// 不用考虑输入字符串是非法的情况，比如：
-// 2[a3[b]]是错误的，应该补一个1，即2[1[a]3[b]]
-// [abc]是错误的，应该补一个1，即1[abc]
+import parse from './parse';
 
 
+let templateStr = `<div>
+        <h3 class="aa bb cc" id="mybox" data-aria="0923">你好</h3>
+        <ul>
+            <li>A</li>
+            <li>B</li>
+            <li>C</li>
+        </ul>
+    </div>`;
+
+const ast = parse(templateStr);
+console.log(ast);
 
 
 
