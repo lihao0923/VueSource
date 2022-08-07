@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     mode: 'development',
     // 入口
-    entry: './src/ast/index.js',
+    entry: './src/directive/index.js',
 
     // 出口
     output: {

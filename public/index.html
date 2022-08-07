@@ -11,7 +11,7 @@
         <!--<button id="btn">click</button>-->
     </div>
     <script>
-        window.onload = function () {
+        // window.onload = function () {
             // let templateStr = '我买了一台{{thing}}, 好{{mood}}啊！';
             // let data = {
             //     thing: '汽车',
@@ -49,6 +49,15 @@
             // let domStr = vueTemplateEngine.render(templateStr, data);
             // let container = document.getElementById('container');
             // container.innerHTML = domStr;
+        // }
+
+        window.onload = function() {
+            new Vue({
+                el: '#app',
+                data: {
+                    a: 10
+                }
+            });
         }
     </script>
 </body>
